@@ -1,0 +1,567 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="fill_parent"
+        android:layout_height="match_parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:fillViewport="true"
+        tools:context=".MainActivity">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content">
+
+
+        <Button
+            android:id="@+id/button_logout"
+            android:layout_width="100dp"
+            android:layout_height="48dp"
+            android:layout_marginTop="8dp"
+            android:backgroundTint="#600303"
+            android:onClick="buttonHandlerLogout"
+            android:text="@string/logout"
+            android:textSize="11sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.067"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/textView_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="56dp"
+            android:text="@string/title_main"
+            android:textSize="28sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.078"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <Button
+            android:id="@+id/button_view"
+            android:layout_width="130dp"
+            android:layout_height="48dp"
+            android:layout_marginTop="52dp"
+            android:backgroundTint="#2AC166"
+            android:onClick="buttonHandlerView"
+            android:text="@string/buttonview"
+            android:textSize="11sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.932"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:ignore="TextContrastCheck" />
+
+        <EditText
+            android:id="@+id/NIK"
+            android:layout_width="341dp"
+            android:layout_height="48dp"
+            android:layout_marginTop="100dp"
+            android:autofillHints="NIK"
+            android:ems="10"
+            android:hint="@string/NIK"
+            android:inputType="number"
+            android:textSize="16sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <EditText
+            android:id="@+id/fullname"
+            android:layout_width="341dp"
+            android:layout_height="48dp"
+            android:layout_marginTop="148dp"
+            android:autofillHints="fullname"
+            android:ems="10"
+            android:hint="@string/fullname"
+            android:inputType="textPersonName"
+            android:textSize="16sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/textView_sex"
+            android:layout_width="87dp"
+            android:layout_height="48dp"
+            android:layout_marginTop="196dp"
+            android:gravity="center_vertical"
+            android:text="@string/sex"
+            android:textSize="16sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.115"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <RadioGroup
+            android:id="@+id/sex"
+            android:layout_width="250dp"
+            android:layout_height="49dp"
+            android:layout_marginTop="196dp"
+            android:orientation="horizontal"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.79"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <RadioButton
+                android:id="@+id/male"
+                android:layout_width="110sp"
+                android:layout_height="wrap_content"
+                android:onClick="radioButtonHandlerSex"
+                android:text="@string/male"
+                tools:layout_editor_absoluteX="113dp"
+                tools:layout_editor_absoluteY="196dp" />
+
+            <RadioButton
+                android:id="@+id/female"
+                android:layout_width="110sp"
+                android:layout_height="wrap_content"
+                android:onClick="radioButtonHandlerSex"
+                android:text="@string/female"
+                tools:layout_editor_absoluteX="223dp"
+                tools:layout_editor_absoluteY="196dp" />
+        </RadioGroup>
+
+        <EditText
+            android:id="@+id/address"
+            android:layout_width="341dp"
+            android:layout_height="48dp"
+            android:layout_marginTop="244dp"
+            android:autofillHints="address"
+            android:ems="10"
+            android:hint="@string/address"
+            android:inputType="textPersonName"
+            android:textSize="16sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <EditText
+            android:id="@+id/rt"
+            android:layout_width="66dp"
+            android:layout_height="48dp"
+            android:layout_marginTop="292dp"
+            android:autofillHints="address"
+            android:ems="10"
+            android:hint="@string/rt"
+            android:inputType="number"
+            android:textSize="16sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.11"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/slash"
+            android:layout_width="25dp"
+            android:layout_height="39dp"
+            android:layout_marginTop="300dp"
+            android:text="@string/slash"
+            android:textAlignment="center"
+            android:textSize="24sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.27"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <EditText
+            android:id="@+id/rw"
+            android:layout_width="63dp"
+            android:layout_height="48dp"
+            android:layout_marginTop="292dp"
+            android:autofillHints="address"
+            android:ems="10"
+            android:hint="@string/rw"
+            android:inputType="number"
+            android:textSize="16sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.37"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <EditText
+            android:id="@+id/postalcode"
+            android:layout_width="167dp"
+            android:layout_height="48dp"
+            android:layout_marginTop="292dp"
+            android:autofillHints="kode pos"
+            android:ems="10"
+            android:hint="@string/postalcode"
+            android:inputType="number"
+            android:textSize="16sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.867"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <EditText
+            android:id="@+id/village"
+            android:layout_width="341dp"
+            android:layout_height="48dp"
+            android:layout_marginTop="340dp"
+            android:autofillHints="desa/kelurahan"
+            android:ems="10"
+            android:hint="@string/village"
+            android:inputType="textPersonName"
+            android:textSize="16sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <EditText
+            android:id="@+id/district"
+            android:layout_width="341dp"
+            android:layout_height="48dp"
+            android:layout_marginTop="388dp"
+            android:autofillHints="kecamatan"
+            android:ems="10"
+            android:hint="@string/district"
+            android:inputType="textPersonName"
+            android:textSize="16sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <EditText
+            android:id="@+id/city"
+            android:layout_width="341dp"
+            android:layout_height="48dp"
+            android:layout_marginTop="436dp"
+            android:autofillHints="kabupaten/kota"
+            android:ems="10"
+            android:hint="@string/city"
+            android:inputType="textPersonName"
+            android:textSize="16sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <EditText
+            android:id="@+id/province"
+            android:layout_width="341dp"
+            android:layout_height="48dp"
+            android:layout_marginTop="484dp"
+            android:autofillHints="provinsi"
+            android:ems="10"
+            android:hint="@string/province"
+            android:inputType="textPersonName"
+            android:textSize="16sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/textView_DoB"
+            android:layout_width="110dp"
+            android:layout_height="30dp"
+            android:layout_marginTop="540dp"
+            android:gravity="center_vertical"
+            android:text="@string/DoB"
+            android:textSize="16sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.117"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <EditText
+            android:id="@+id/DoBdate"
+            android:layout_width="50dp"
+            android:layout_height="48dp"
+            android:layout_marginTop="532dp"
+            android:autofillHints="date of birth"
+            android:ems="10"
+            android:hint="@string/date"
+            android:inputType="date"
+            android:minHeight="48dp"
+            android:textSize="16sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.401"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/slash2"
+            android:layout_width="25dp"
+            android:layout_height="39dp"
+            android:layout_marginTop="540dp"
+            android:text="@string/slash"
+            android:textAlignment="center"
+            android:textSize="24sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.505"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <EditText
+            android:id="@+id/DoBmonth"
+            android:layout_width="50dp"
+            android:layout_height="48dp"
+            android:layout_marginTop="532dp"
+            android:autofillHints="month of birth"
+            android:ems="10"
+            android:hint="@string/month"
+            android:inputType="date"
+            android:minHeight="48dp"
+            android:textSize="16sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.609"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/slash3"
+            android:layout_width="25dp"
+            android:layout_height="39dp"
+            android:layout_marginTop="540dp"
+            android:text="@string/slash"
+            android:textAlignment="center"
+            android:textSize="24sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.699"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <EditText
+            android:id="@+id/DoByear"
+            android:layout_width="80dp"
+            android:layout_height="48dp"
+            android:layout_marginTop="532dp"
+            android:autofillHints="year of birth"
+            android:ems="10"
+            android:hint="@string/year"
+            android:inputType="date"
+            android:minHeight="48dp"
+            android:textSize="16sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.891"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <EditText
+            android:id="@+id/occupation"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="580dp"
+            android:width="341dp"
+            android:autofillHints="occupation"
+            android:ems="10"
+            android:hint="@string/occupation"
+            android:inputType="text"
+            android:minHeight="48dp"
+            android:textSize="16sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/textView_religion"
+            android:layout_width="87dp"
+            android:layout_height="30dp"
+            android:layout_marginTop="636dp"
+            android:gravity="center_vertical"
+            android:text="@string/religion"
+            android:textSize="16sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.098"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <RadioGroup
+            android:id="@+id/religion"
+            android:layout_width="360dp"
+            android:layout_height="175dp"
+            android:layout_marginTop="668dp"
+            android:orientation="vertical"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.484"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <RadioGroup
+                android:id="@+id/religionr1"
+                android:layout_width="350dp"
+                android:layout_height="56dp"
+                android:orientation="horizontal"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.372"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="0.788">
+
+                <RadioButton
+                    android:id="@+id/islam"
+                    android:layout_width="110sp"
+                    android:layout_height="wrap_content"
+                    android:onClick="radioButtonHandlerReligion"
+                    android:text="@string/islam"
+                    tools:layout_editor_absoluteX="16dp"
+                    tools:layout_editor_absoluteY="668dp" />
+
+                <RadioButton
+                    android:id="@+id/catholic"
+                    android:layout_width="110sp"
+                    android:layout_height="wrap_content"
+                    android:onClick="radioButtonHandlerReligion"
+                    android:text="@string/catholic"
+                    tools:layout_editor_absoluteX="126dp"
+                    tools:layout_editor_absoluteY="668dp" />
+
+                <RadioButton
+                    android:id="@+id/protestant"
+                    android:layout_width="110sp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:onClick="radioButtonHandlerReligion"
+                    android:text="@string/protestant"
+                    tools:layout_editor_absoluteX="236dp"
+                    tools:layout_editor_absoluteY="668dp" />
+            </RadioGroup>
+
+            <RadioGroup
+                android:id="@+id/religionr2"
+                android:layout_width="350dp"
+                android:layout_height="55dp"
+                android:orientation="horizontal"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.372"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="0.853">
+
+                <RadioButton
+                    android:id="@+id/buddha"
+                    android:layout_width="110sp"
+                    android:layout_height="wrap_content"
+                    android:onClick="radioButtonHandlerReligion"
+                    android:text="@string/buddha"
+                    tools:layout_editor_absoluteX="16dp"
+                    tools:layout_editor_absoluteY="724dp" />
+
+                <RadioButton
+                    android:id="@+id/hindu"
+                    android:layout_width="110sp"
+                    android:layout_height="wrap_content"
+                    android:onClick="radioButtonHandlerReligion"
+                    android:text="@string/hindu"
+                    tools:layout_editor_absoluteX="126dp"
+                    tools:layout_editor_absoluteY="724dp" />
+
+                <RadioButton
+                    android:id="@+id/confucianism"
+                    android:layout_width="110sp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:onClick="radioButtonHandlerReligion"
+                    android:text="@string/confucianism"
+                    tools:layout_editor_absoluteX="236dp"
+                    tools:layout_editor_absoluteY="724dp" />
+            </RadioGroup>
+
+            <RadioGroup
+                android:id="@+id/religionr3"
+                android:layout_width="350dp"
+                android:layout_height="55dp"
+                android:orientation="horizontal"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.372"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="0.918">
+
+                <RadioButton
+                    android:id="@+id/otherreligion"
+                    android:layout_width="110sp"
+                    android:layout_height="wrap_content"
+                    android:onClick="radioButtonHandlerReligion"
+                    android:text="@string/otherreligion"
+                    tools:layout_editor_absoluteX="16dp"
+                    tools:layout_editor_absoluteY="779dp" />
+
+            </RadioGroup>
+        </RadioGroup>
+
+        <TextView
+            android:id="@+id/textView_marriage"
+            android:layout_width="70dp"
+            android:layout_height="48dp"
+            android:layout_marginTop="845dp"
+            android:gravity="center_vertical"
+            android:text="@string/status"
+            android:textSize="16sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.084"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <RadioGroup
+            android:id="@+id/marriage"
+            android:layout_width="250dp"
+            android:layout_height="49dp"
+            android:layout_marginTop="845dp"
+            android:orientation="horizontal"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.79"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <RadioButton
+                android:id="@+id/married"
+                android:layout_width="110sp"
+                android:layout_height="wrap_content"
+                android:onClick="radioButtonHandlerMarriage"
+                android:text="@string/married"
+                tools:layout_editor_absoluteX="113dp"
+                tools:layout_editor_absoluteY="196dp" />
+
+            <RadioButton
+                android:id="@+id/notmarried"
+                android:layout_width="110sp"
+                android:layout_height="wrap_content"
+                android:onClick="radioButtonHandlerMarriage"
+                android:text="@string/notmarried"
+                tools:layout_editor_absoluteX="223dp"
+                tools:layout_editor_absoluteY="196dp" />
+        </RadioGroup>
+
+        <Button
+            android:id="@+id/button_clear"
+            android:layout_width="86dp"
+            android:layout_height="48dp"
+            android:layout_marginTop="910dp"
+            android:backgroundTint="#FF0000"
+            android:onClick="buttonHandlerClear"
+            android:text="@string/buttonclear"
+            android:textColor="#DDDDDD"
+            android:textSize="11sp"
+            android:visibility="visible"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.11"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <Button
+            android:id="@+id/button_submit"
+            android:layout_width="177dp"
+            android:layout_height="55dp"
+            android:layout_marginTop="910dp"
+            android:backgroundTint="#4C1A85"
+            android:onClick="buttonHandlerSubmit"
+            android:text="@string/buttonsubmit"
+            android:textColor="#DADADA"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.912"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</ScrollView>
